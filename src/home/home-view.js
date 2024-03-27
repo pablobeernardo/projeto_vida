@@ -1,0 +1,26 @@
+import { Container } from "../style/style";
+import IgrejaHeader from "./igreja-header";
+import Navbar from "./components/navbar";
+import IgrejaSection from "./igreja-section";
+import RomperSection from "./romper-section";
+import MinisteriosSection from "./ministerios-section";
+import Contato from "./contato";
+
+export default function HomeView() {
+    return (
+        <Container>
+            <header>
+                <Navbar />
+                <IgrejaHeader />
+            </header>
+            <section>
+                <IgrejaSection/>
+                <MinisteriosSection/>
+                <RomperSection/>
+            </section>
+            <footer>
+                <Contato/>
+            </footer>
+        </Container>
+    )
+};
