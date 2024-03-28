@@ -21,7 +21,7 @@ export default function Contato() {
                         rel="noopener noreferrer"
                         style={{ textDecoration: 'none' }}
                     >
-                        Google Maps
+                        Ver
                     </a>
                 </div>
                 <div>

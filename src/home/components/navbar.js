@@ -1,6 +1,8 @@
 import { Container} from "../../style/style";
 import React from 'react';
 import '../../style/style.css';
+import { Link } from "react-router-dom";
+import Somos from "../../others/somos";
 
 export default function Navbar() {
     return (
@@ -14,10 +16,10 @@ export default function Navbar() {
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" aria-current="page" href="quem-somos">Quem somos</a>
+                                <Link class="nav-link" aria-current="page" to="/somos">Quem somos</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Atividades</a>
+                                <Link class="nav-link" aria-current="page" to="/atividades">Atividades</Link>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Eventos</a>
@@ -31,6 +33,15 @@ export default function Navbar() {
                                     <li><a class="dropdown-item nav-link" href="#">Another action</a></li>
                                     <li><a class="dropdown-item nav-link" href="#">Something else here</a></li>
                                 </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Pedidos de Oração</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Doações</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contato</a>    
                             </li>
                         </ul>
                     </div>
