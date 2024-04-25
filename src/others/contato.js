@@ -1,15 +1,27 @@
-import { Container, CardStyle, FooterStyle, TitleStyle } from "../style/style";
+import React from 'react';
+import { Container, FooterStyle, TitleStyle, FormContato } from '../style/style';
 import { FaInstagram, FaFacebook } from 'react-icons/fa';
+import Navbar from '../home/components/navbar';
+
 
 export default function Contato() {
     return (
-        <Container id="contato">
+        <Container>
+            <Navbar />
             <TitleStyle>
                 <h1>Contato</h1>
                 <hr></hr>
             </TitleStyle>
             <FooterStyle>
                 <div>
+                    <FormContato>
+                        <h3>Deixe sua mensagem</h3>
+                        <input type="text" placeholder="Nome" />
+                        <input type="email" placeholder="Email" />
+                        <input type='tel' placeholder='Telefone' pattern='[0-9]{2} [0-9]{5}-[0-9]{4}' title='Digite o telefone no formato 00 00000-0000' required></input>
+                        <textarea rows="4" placeholder="Mensagem"></textarea>
+                        <button type="submit">Enviar</button>
+                    </FormContato>
                     <h3>Endereço</h3>
                     <a
                         href="https://goo.gl/maps/NHAb6i5cTyYKZzMM6"
@@ -42,7 +54,6 @@ export default function Contato() {
                     </a>
                 </div>
             </FooterStyle>
-
         </Container>
-    )
+    )   
 }

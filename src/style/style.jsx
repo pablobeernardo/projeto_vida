@@ -20,15 +20,11 @@ export const AboutStyle = styled.section`
     align-items: center;
     padding: 30px 0;
 
-    @media (max-width: 768px) {
-        flex-direction: column;
-    }
-
     img {
         width: 400px;
         height: 300px;
         object-fit: cover;
-        margin: 10px 100px;
+        margin: 10px 0;
     }
 
     a {
@@ -42,11 +38,17 @@ export const AboutStyle = styled.section`
         color: #c77100;
     }
 
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+
+
 `;
 
 export const SectionStyle = styled.section`
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: space-between;
 
@@ -140,13 +142,13 @@ export const FooterStyle = styled.div`
     padding: 30px 0;
     text-align: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: space-between;
     font-size: 20px;
 
     a {
-        color: #fff;
+        color: #c77100;
         margin: 0 10px;
         font-size: 20px;
         transition: 0.3s;
@@ -154,6 +156,10 @@ export const FooterStyle = styled.div`
 
     a:hover {
         color: #c77100;
+    }
+
+    h3{
+        margin: 10px;
     }
 
     @media (max-width: 768px) {
@@ -180,69 +186,83 @@ export const SectionText = styled.section`
 
 `;
 
-export const Mural = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 0;
 
-    @media (max-width: 768px) {
-        flex-direction: column;
-    }
+export const Mural = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 export const CardMural = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 20px;
+  border: 1px solid #ff9100;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    margin: 10px 1px;
+  }
+
+  img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
     margin: 10px;
-    border: 1px solid #ff9100;
-    border-radius: 10px;
-    transition: 0.3s;
-    text-align: center;
+    border-radius: 5px;
     cursor: pointer;
+  }
 
-    @media (max-width: 768px) {
-        margin: 10px 0;
-    }
-
+  @media (max-width: 768px) {
     img {
-        width: 200px;
-        height: 150px;
-        object-fit: cover;
-        margin: 10px;
-        transition: 0.3s;
+      width: 100px;
+      height: 75px;
     }
 
-    img:hover {
-        width: 250px;
-        height: 150px;
-    }
+  }
+`;
 
-    img:active {
-        width: 100%;
-        height: 100%;
-    }
+export const ModalContainer = styled.div`
+  display: ${(props) => (props.show ? "block" : "none")};
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+`;
 
-    @media (max-width: 768px) {
-        img {
-            width: 100px;
-            height: 75px;
-        }
+export const ModalContent = styled.div`
+  margin: 15% auto;
+  width: 80%;
+  max-width: 700px;
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+`;
 
-        img:hover {
-            width: 150px;
-            height: 100px;
-        }
+export const ModalImage = styled.img`
+  width: 100%;
+  height: auto;
+`;
 
-        img:active {
-            width: 100%;
-            height: 100%;
-        }
-    }
+export const CloseButton = styled.span`
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  &:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
 `;
 
 export const CollumnStyle = styled.div`
@@ -326,5 +346,62 @@ export const CardColumn = styled.div`
         height: 150px;
         object-fit: cover;
         margin: 10px;
+    }
+`;
+
+export const FormContato = styled.form`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+
+    input {
+        width: 300px;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ff9100;
+        text-align: center;
+    }
+
+    textarea {
+        width: 300px;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ff9100;
+        text-align: center;
+    }
+
+    button {
+        width: 300px;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid #ff9100;
+        background-color: #ff9100;
+        color: #fff;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background-color: #c77100;
+    }
+`;
+
+export const SectionCarrousel = styled.section`
+
+    img {
+        width: 400px;
+        height: 700px;
+        object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+        img {
+            width: 100%;
+            height: 300px;
+        }
     }
 `;

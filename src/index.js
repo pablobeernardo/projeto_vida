@@ -6,7 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import Atividades from './others/atividades';
-
+import Eventos from './others/eventos';
+import ConexaoTeen from './others/teen';
+import Kids from './others/kids';
+import Louvor from './others/louvor';
+import Rede from './others/rede';
+import Doacoes from './others/doacoes';
+import Contato from './others/contato';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -16,6 +22,13 @@ root.render(
       <Route path="/" element={<App />} />
       <Route path='/somos' element={<Somos />} />
       <Route path='/atividades' element={<Atividades />} />
+      <Route path='/eventos' element={<Eventos />} />
+      <Route path='/conexaoteen' element={<ConexaoTeen />} />
+      <Route path='/kids' element={<Kids />} />
+      <Route path='/louvor' element={<Louvor />} />
+      <Route path='/rede' element={<Rede />} />
+      <Route path='/doacoes' element={<Doacoes />} />
+      <Route path='/contato' element={<Contato />} />
     </Routes>
   </HashRouter>
   

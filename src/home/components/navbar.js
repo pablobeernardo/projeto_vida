@@ -22,26 +22,24 @@ export default function Navbar() {
                                 <Link class="nav-link" aria-current="page" to="/atividades">Atividades</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Eventos</a>
+                                <Link class="nav-link" aria-current="page" to={"/eventos"}>Eventos</Link>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Ministérios
                                 </a>
                                 <ul class="dropdown-menu" >
-                                    <li><a class="dropdown-item nav-link" href="#">Action</a></li>
-                                    <li><a class="dropdown-item nav-link" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item nav-link" href="#">Something else here</a></li>
+                                    <li><Link class="dropdown-item nav-link" to={"/conexaoteen"} >Conexão Teen</Link></li>
+                                    <li><Link class="dropdown-item nav-link" to={"/kids"}>Projeto Vida Kids</Link></li>
+                                    <li><Link class="dropdown-item nav-link" to={'/louvor'}>Louvor</Link></li>
+                                    <li><Link class="dropdown-item nav-link" to={'/rede'}>Rede por 100</Link></li>
                                 </ul>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Pedidos de Oração</a>
+                                <Link class="nav-link" aria-current="page" to={"/doacoes"}>Doações</Link>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Doações</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contato</a>    
+                                <Link class="nav-link"  aria-current="page" to={"/contato"}>Contato</Link>    
                             </li>
                         </ul>
                     </div>
