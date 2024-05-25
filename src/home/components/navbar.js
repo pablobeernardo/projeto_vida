@@ -9,7 +9,7 @@ export default function Navbar() {
         <Container>
             <nav class="navbar navbar-expand-lg "  data-bs-theme="dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand nav-link" href="#">Projeto Vida Três Rios</a>
+                    <a class="navbar-brand nav-link" href="#">Home</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>

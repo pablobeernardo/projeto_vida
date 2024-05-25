@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, FooterStyle, TitleStyle } from '../style/style';
+import { Container, FooterStyle, SocialMedia, TitleStyle } from '../style/style';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaInstagram, FaFacebook, FaWhatsapp } from 'react-icons/fa';
 import Navbar from '../home/components/navbar';
 
@@ -39,13 +39,12 @@ export default function Contato() {
                     <h3><FaWhatsapp style={{ color: '#25D366' }} /> WhatsApp</h3>
                     <a href="https://api.whatsapp.com/send?phone=5521999999999" target="_blank" rel="noreferrer">Iniciar uma conversa</a>
                 </div>
-                <div>
-                    <h3>Redes Sociais</h3>
-                    <p>Siga-nos para ficar por dentro das novidades!</p>
+                <h3>Redes Sociais</h3>
+                <SocialMedia>
                     <a href="https://www.instagram.com/projetovidatresrios/" target="_blank" rel="noreferrer"><FaInstagram style={{ color: '#E1306C' }} /> </a>
                     <br />
                     <a href="https://www.facebook.com/projetovidatresrios" target="_blank" rel="noreferrer"><FaFacebook style={{ color: '#3B5998' }} /> </a>
-                </div>
+                </SocialMedia>
             </FooterStyle>
         </Container>
     );

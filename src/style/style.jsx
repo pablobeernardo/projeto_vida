@@ -284,52 +284,6 @@ export const CloseButton = styled.span`
   }
 `;
 
-export const AtividadeStyle = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 0;
-
-    @media (max-width: 768px) {
-        flex-direction: column;
-    }
-
-`;
-
-
-export const BlockStyle = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 0;
-
-    @media (max-width: 768px) {
-        flex-direction: column;
-        
-    }
-
-    img {
-        width: 400px;
-        height: 300px;
-        object-fit: cover;
-        margin: 10px 100px;
-    }
-
-    a {
-        color: #ff9100;
-        margin-right: 10px;
-        font-size: 40px;
-        transition: 0.3s;
-    }
-
-    a:hover {
-        color: #c77100;
-    }
-    
-
-`;
 
 export const CardColumn = styled.div`
     display: flex;
@@ -369,46 +323,6 @@ export const CardColumn = styled.div`
     }
 `;
 
-export const FormContato = styled.form`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 0;
-
-    input {
-        width: 300px;
-        margin: 10px;
-        padding: 10px;
-        border-radius: 10px;
-        border: 1px solid #ff9100;
-        text-align: center;
-    }
-
-    textarea {
-        width: 300px;
-        margin: 10px;
-        padding: 10px;
-        border-radius: 10px;
-        border: 1px solid #ff9100;
-        text-align: center;
-    }
-
-    button {
-        width: 300px;
-        margin: 10px;
-        padding: 10px;
-        border-radius: 10px;
-        border: 1px solid #ff9100;
-        background-color: #ff9100;
-        color: #fff;
-        transition: 0.3s;
-    }
-
-    button:hover {
-        background-color: #c77100;
-    }
-`;
 
 export const SectionCarrousel = styled.section`
 
@@ -462,5 +376,31 @@ export const QRCode = styled.img`
         width: 100px;
         margin-top: 5px;
         margin-bottom: 5px;
+    }
+`;
+
+export const SocialMedia = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    font-size: 30px;
+
+    a {
+        color: #c77100;
+        margin: 0 10px;
+        transition: 0.3s;
+        display: flex;
+        flex-direction: row;
+    }
+
+    a:hover {
+        color: #ff9100;
+    }
+
+    @media (max-width: 768px) {
+        a {
+            font-size: 20px;
+        }
     }
 `;
