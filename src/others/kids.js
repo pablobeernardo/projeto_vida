@@ -1,66 +1,111 @@
+import React from 'react';
+import { Container, TitleStyle, RomperVideo, SectionText, Mural, CardMural, ModalContainer, ModalContent, ModalImage, CloseButton } from "../style/style";
 import Navbar from "../home/components/navbar";
-import { CardMural, Container, Mural, RomperVideo, SectionText, TitleStyle } from "../style/style";
+import { useState } from 'react';
+import kids1 from "../assets/kids1.jpg";
+import kids2 from "../assets/kids2.jpg";
+import kids3 from "../assets/kids3.jpg";
+import kids4 from "../assets/kids4.jpg";
+import kids5 from "../assets/kids5.jpg";
 
-export default function Kids() {
+export default function ConexaoTeen() {
+    const [showModal, setShowModal] = useState(false);
+    const [selectedEvent, setSelectedEvent] = useState(null);
+
+    const images = [
+        {
+            src: kids1,
+            title: "Foto 1"
+        },
+        {
+            src: kids2,
+            title: "Foto 2"
+        },
+        {
+            src: kids3,
+            title: "Foto 3"
+        },
+        {
+            src: kids4,
+            title: "Foto 4"
+        },
+        {
+            src: kids5,
+            title: "Foto 5"
+        }
+    ];
+
+    const openModal = (event) => {
+        setSelectedEvent(event);
+        setShowModal(true);
+    };
+
+    const closeModal = () => {
+        setSelectedEvent(null);
+        setShowModal(false);
+    };
+
     return (
         <Container>
             <Navbar />
             <TitleStyle>
-                <h1>Projeto Vida Kids</h1>
-                <hr></hr>
+                <h1>Projeto Vida Kids - Uma Igreja para Crianças</h1>
+                <hr />
             </TitleStyle>
             <RomperVideo>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/0M6f5J4H2Zc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe
+                    width="560"
+                    height="315"
+                    src='https://www.youtube.com/embed/mH4LeV1x_oA'
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                ></iframe>
             </RomperVideo>
             <SectionText>
                 <p>
-                    O Projeto Vida Três Rios é uma igreja evangélica que nasceu em 2009, fruto de um chamado de Deus para a cidade de Três Rios.
-                    A igreja tem como missão transformar vidas através do amor de Deus, e para isso, busca cumprir o Ide de Jesus, levando o evangelho a toda criatura.
+                    A Igreja Kids é o ministério infantil do Projeto Vida Três Rios, criado especialmente
+                    para proporcionar às crianças um ambiente acolhedor, divertido e educativo onde possam
+                    aprender sobre o amor de Deus. Nosso objetivo é ajudar as crianças a crescerem na fé,
+                    compreenderem os princípios do evangelho e desenvolverem um relacionamento pessoal com Jesus.
                 </p>
                 <p>
-                    A igreja é liderada pelo Pr. Silas Velasco e sua esposa, a Pra. Lívia Velasco.
-                    A igreja tem como visão ser uma igreja relevante, que impacta a sociedade e que transforma vidas.
+                    A missão da Igreja Kids é plantar a semente do evangelho no coração das crianças, guiando-as no
+                    caminho do amor, da fé e do serviço a Deus e ao próximo. Acreditamos que cada criança é um presente
+                    precioso e nosso desejo é vê-las crescer em um ambiente seguro e amoroso, onde possam descobrir o
+                    propósito de Deus para suas vidas.
                 </p>
                 <p>
-                    A igreja tem como valores a adoração, a comunhão, o discipulado, o serviço e a missão.
+                    A Igreja Kids é liderada por uma equipe dedicada e amorosa, comprometida em proporcionar a melhor
+                    experiência para as crianças. Todos os nossos voluntários são treinados e preparados para cuidar e
+                    ensinar as crianças com carinho e dedicação
                 </p>
                 <p>
-                    A igreja tem como lema "Nossa paixão é por vidas", e tem como objetivo alcançar vidas para Jesus.
-                </p>
-                <p>
-                    A igreja se reúne aos domingos às 19h e às quartas-feiras às 20h.
+                    Se você tem filhos, traga-os para fazer parte da Igreja Kids. Aqui, eles encontrarão um lugar
+                    seguro e alegre para aprender sobre Deus, fazer novos amigos e crescer na fé. Juntos, vamos construir
+                    uma base sólida de valores cristãos que irão guiar suas vidas.
                 </p>
             </SectionText>
-            <div>
-                <TitleStyle>
-                    <h1>Nossos Kids</h1>
-                    <hr></hr>
-                </TitleStyle>
-                <Mural>
-                    <CardMural>
-                        <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
+            <TitleStyle>
+                <h1>Um culto para nossas crianças</h1>
+                <hr />
+            </TitleStyle>
+            <Mural>
+                {images.map((image, index) => (
+                    <CardMural key={index} onClick={() => openModal(image.src)}>
+                        <img src={image.src} alt={image.title} />
                     </CardMural>
-                    <CardMural>
-                        <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    </CardMural>
-                    <CardMural>
-                        <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    </CardMural>
-                    <CardMural>
-                        <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    </CardMural>
-                    <CardMural>
-                        <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    </CardMural>
-                    <CardMural>
-                        <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    </CardMural>
-                    <CardMural>
-                        <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    </CardMural>
-                </Mural>
-            </div>
-
+                ))}
+            </Mural>
+            {showModal && (
+                <ModalContainer show={showModal} onClick={closeModal}>
+                    <ModalContent>
+                        <CloseButton onClick={closeModal}>&times;</CloseButton>
+                        <ModalImage src={selectedEvent} alt="Imagem ampliada" />
+                    </ModalContent>
+                </ModalContainer>
+            )}
         </Container>
-    )
+    );
 }

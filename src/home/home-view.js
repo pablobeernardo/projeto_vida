@@ -4,7 +4,7 @@ import Navbar from "./components/navbar";
 import IgrejaSection from "./igreja-section";
 import RomperSection from "./romper-section";
 import MinisteriosSection from "./ministerios-section";
-import Contato from "./contato";
+import Footer from "./contato";
 
 export default function HomeView() {
     return (
@@ -19,7 +19,7 @@ export default function HomeView() {
                 <RomperSection/>
             </section>
             <footer>
-                <Contato/>
+                <Footer/>
             </footer>
         </Container>
     )

@@ -9,8 +9,6 @@ function CustomModal({ show, onHide, event }) {
       </Modal.Header>
       <Modal.Body>
         <img src={event?.image} alt={event?.title} style={{ maxWidth: "100%" }} />
-        <p>{event?.description}</p>
-        <p>Data: {event?.date}</p>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={onHide}>

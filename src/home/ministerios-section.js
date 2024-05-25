@@ -1,4 +1,8 @@
-import { Container, TitleStyle, SectionStyle, CardStyle } from '../style/style';
+import { Container, TitleStyle, SectionStyle, CardStyle, CustomLink } from '../style/style';
+import kids from "../assets/kids.jpg";
+import jovem from "../assets/jovem.jpg";
+import louvor from "../assets/louvor.jpg";
+import rede100 from "../assets/rede100.jpg";
 
 export default function MinisteriosSection() {
     return (
@@ -9,24 +13,32 @@ export default function MinisteriosSection() {
             </TitleStyle>
             <SectionStyle>
                 <CardStyle>
-                    <h2>Ministério de Louvor</h2>
-                    <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Ministério de Louvor" />
-                    <p>Reunião semanal</p>
+                    <CustomLink to="/conexaoteen" aria-current="page">
+                        <h2>Conexão Teen</h2>
+                        <img src={jovem} alt="Conexão Teen" />
+                        <p>Uma igreja de adolescentes</p>
+                    </CustomLink>
                 </CardStyle>
                 <CardStyle>
-                    <h2>Ministério de Dança</h2>
-                    <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.18169-9/12642633_574536772699201_8701473913864187661_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=zT7XXQpk_LAAX9bsrFJ&_nc_ht=scontent-gig4-2.xx&oh=00_AfBSxH2nS5cZJ39X4u_q96_oT7FgYo4cmE-ZADqt53qC7g&oe=662A4AA8" alt="Ministério de Dança" />
-                    <p>Reunião semanal</p>
+                    <CustomLink to="/kids" aria-current="page">
+                        <h2>Projeto Vida Kids</h2>
+                        <img src={kids} alt="Projeto Kids" />
+                        <p>Uma igreja das nossas crianças</p>
+                    </CustomLink>
                 </CardStyle>
                 <CardStyle>
-                    <h2>Ministério de Crianças</h2>
-                    <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Ministério de Crianças" />
-                    <p>Reunião semanal</p>
+                    <CustomLink to="/louvor" aria-current="page">
+                        <h2>Ministério de Louvor</h2>
+                        <img src={louvor} alt="Projeto Kids" />
+                        <p>Nossa Equipe de Adoração</p>
+                    </CustomLink>
                 </CardStyle>
                 <CardStyle>
-                    <h2>Ministério de Jovens</h2>
-                    <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.18169-9/12642633_574536772699201_8701473913864187661_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=zT7XXQpk_LAAX9bsrFJ&_nc_ht=scontent-gig4-2.xx&oh=00_AfBSxH2nS5cZJ39X4u_q96_oT7FgYo4cmE-ZADqt53qC7g&oe=662A4AA8" alt="Ministério de Jovens" />
-                    <p>Reunião semanal</p>
+                    <CustomLink to="/rede" aria-current="page">
+                        <h2>Rede por 100</h2>
+                        <img src={rede100} alt="Projeto Kids" />
+                        <p>Faça parte de uma célula</p>
+                    </CustomLink>
                 </CardStyle>
             </SectionStyle>
         </Container>

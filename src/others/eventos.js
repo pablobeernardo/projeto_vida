@@ -1,57 +1,98 @@
 import React from 'react';
-import { Container, TitleStyle, CollumnStyle, BlockStyle, CardColumn, Mural, CardMural } from "../style/style";
+import { Container, TitleStyle, AtividadeStyle, BlockStyle, CardColumn, Mural, CardMural } from "../style/style";
 import Navbar from "../home/components/navbar";
+import { useState } from 'react';
+import CustomModal from "../home/components/modal";
+import alianca from "../assets/alianca.jpg";
+import rompendo from "../assets/rompendo.jpg";
+import ceia from "../assets/ceia.jpg";
+import day from "../assets/120day.jpg"; 
+import celula from "../assets/celula.jpg";
 
 export default function Eventos() {
+
+    const [showModal, setShowModal] = useState(false);
+    const [selectedEvent, setSelectedEvent] = useState(null);
+
+    const events = {
+        "Junho 2024": [
+            {
+                image: alianca,
+                title: "Batismo e Aliança de Membros",
+                description: "dia 02/06 as 19h",
+            },
+
+            {
+                image: rompendo,
+                title: "Discipulado Rompendo Limites",
+                description: "04/06 as 09h",
+            },
+            {
+                image: ceia,
+                title: "Ceia do Senhor",
+                description: "09/06 as 09h e 19h",
+            }
+        ],
+
+        "Julho 2024": [
+            {
+                image: day,
+                title: "120 Day",
+                description: "dia 06/07 as 19h",
+            },
+
+            {
+                image: celula,
+                title: "Festa das Redes",
+                description: "07/07 as 09h e 19h",
+            },
+            {
+                image: ceia,
+                title: "Ceia do Senhor",
+                description: "14/07 as 09h e 19h",
+            }
+        ]
+
+    }
+
+    const openModal = (event) => {
+        setSelectedEvent(event);
+        setShowModal(true);
+    }
+
+    const closeModal = () => {
+        setSelectedEvent(null);
+        setShowModal(false);
+    }
+
+
     return (
         <Container>
             <Navbar />
             <TitleStyle>
-                <h1>Eventos</h1>
+                <h1>Próximos Eventos</h1>
                 <hr></hr>
             </TitleStyle>
-            <TitleStyle>
-                <h1>Janeiro</h1>
-                <hr></hr>
-            </TitleStyle>
-            <Mural>
-                <CardMural>
-                    <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    <p>Evento 1</p>
-                    <p>Descrição do evento 1</p>
-                </CardMural>
-                <CardMural>
-                    <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    <p>Evento 2</p>
-                    <p>Descrição do evento 2</p>
-                </CardMural>
-                <CardMural>
-                    <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    <p>Evento 3</p>
-                    <p>Descrição do evento 3</p>
-                </CardMural>
-                <CardMural>
-                    <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    <p>Evento 4</p>
-                    <p>Descrição do evento 4</p>
-                </CardMural>
-            </Mural>
-            <TitleStyle>
-                <h1>Fevereiro</h1>
-                <hr></hr>
-            </TitleStyle>
-            <Mural>
-                <CardMural>
-                    <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    <p>Evento 5</p>
-                    <p>Descrição do evento 5</p>
-                </CardMural>
-                <CardMural>
-                    <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    <p>Evento 6</p>
-                    <p>Descrição do evento 6</p>
-                </CardMural>
-            </Mural>
+            {Object.keys(events).map(month => (
+                <div key={month}>
+                    <TitleStyle>
+                        <h1>{month}</h1>
+                        <hr></hr>
+                    </TitleStyle>
+                    <Mural>
+                        {events[month].map((event, index) => (
+                            <CardMural key={index} onClick={() => openModal(event)}>
+                                <img src={event.image} alt={event.title} />
+                                <p>{event.title}</p>
+                                <p>{event.description}</p>
+                            </CardMural>
+                        ))}
+                    </Mural>
+                </div>
+            ))}
+            {showModal && selectedEvent && (
+                <CustomModal show={showModal} onHide={closeModal} event={selectedEvent} />
+            )}
         </Container>
-    )
-}
+    );
+}   

@@ -1,66 +1,108 @@
+import React, { useState } from 'react';
+import { Container, TitleStyle, RomperVideo, SectionText, Mural, CardMural, ModalContainer, ModalContent, ModalImage, CloseButton } from "../style/style";
 import Navbar from "../home/components/navbar";
-import { CardMural, Container, Mural, RomperVideo, SectionText, TitleStyle } from "../style/style";
+import celula1 from "../assets/celula1.jpg";
+import celula2 from "../assets/celula2.jpg";
+import celula3 from "../assets/celula3.jpg";
+import celula4 from "../assets/celula4.jpg";
+import celula5 from "../assets/celula5.jpg";
 
-export default function Rede() {
+export default function RedePor100Ovelhas() {
+    const [showModal, setShowModal] = useState(false);
+    const [selectedEvent, setSelectedEvent] = useState(null);
+
+    const images = [
+        {
+            src: celula1,
+            title: "Foto 1"
+        },
+        {
+            src: celula2,
+            title: "Foto 2"
+        },
+        {
+            src: celula3,
+            title: "Foto 3"
+        },
+        {
+            src: celula4,
+            title: "Foto 4"
+        },
+        {
+            src: celula5,
+            title: "Foto 5"
+        }
+    ];
+
+    const openModal = (event) => {
+        setSelectedEvent(event);
+        setShowModal(true);
+    };
+
+    const closeModal = () => {
+        setSelectedEvent(null);
+        setShowModal(false);
+    };
+
     return (
         <Container>
             <Navbar />
             <TitleStyle>
-                <h1>Rede por 100 Ovelhas</h1>
-                <hr></hr>
+                <h1>Rede por 100 Ovelhas - Projeto de Células</h1>
+                <hr />
             </TitleStyle>
             <RomperVideo>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/0M6f5J4H2Zc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/nfZaF1RahdE"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                ></iframe>
             </RomperVideo>
             <SectionText>
                 <p>
-                    O Projeto Vida Três Rios é uma igreja evangélica que nasceu em 2009, fruto de um chamado de Deus para a cidade de Três Rios.
-                    A igreja tem como missão transformar vidas através do amor de Deus, e para isso, busca cumprir o Ide de Jesus, levando o evangelho a toda criatura.
+                    A Rede por 100 Ovelhas é o projeto de células do Projeto Vida Três Rios, focado em criar pequenos grupos
+                    de comunhão, discipulado e crescimento espiritual. Nossa missão é fortalecer a fé dos membros da igreja,
+                    proporcionando um espaço onde possam compartilhar suas vidas, aprender juntos e servir uns aos outros.
                 </p>
                 <p>
-                    A igreja é liderada pelo Pr. Silas Velasco e sua esposa, a Pra. Lívia Velasco.
-                    A igreja tem como visão ser uma igreja relevante, que impacta a sociedade e que transforma vidas.
+                    Cada célula é uma pequena comunidade que se reúne semanalmente em diferentes lares ou locais, permitindo
+                    um ambiente mais íntimo e acolhedor. É um lugar onde todos são bem-vindos, onde podem se sentir amados,
+                    apoiados e encorajados a crescer na fé e no conhecimento de Jesus Cristo.
                 </p>
                 <p>
-                    A igreja tem como valores a adoração, a comunhão, o discipulado, o serviço e a missão.
+                    A liderança das células é composta por membros dedicados e treinados, comprometidos em guiar e nutrir
+                    espiritualmente cada participante. Através de estudos bíblicos, momentos de oração e comunhão, buscamos
+                    promover um crescimento integral que afeta todas as áreas da vida.
                 </p>
                 <p>
-                    A igreja tem como lema "Nossa paixão é por vidas", e tem como objetivo alcançar vidas para Jesus.
-                </p>
-                <p>
-                    A igreja se reúne aos domingos às 19h e às quartas-feiras às 20h.
+                    Se você está procurando um lugar para se conectar mais profundamente com Deus e com outras pessoas, convidamos
+                    você a se juntar a uma de nossas células. Juntos, vamos viver a verdadeira essência da igreja, que é ser uma
+                    família unida pelo amor de Cristo.
                 </p>
             </SectionText>
-            <div>
-                <TitleStyle>
-                    <h1>Faça parte de uma rede</h1>
-                    <hr></hr>
-                </TitleStyle>
-                <Mural>
-                    <CardMural>
-                        <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
+            <TitleStyle>
+                <h1>Momentos da Rede por 100 Ovelhas</h1>
+                <hr />
+            </TitleStyle>
+            <Mural>
+                {images.map((image, index) => (
+                    <CardMural key={index} onClick={() => openModal(image.src)}>
+                        <img src={image.src} alt={image.title} />
                     </CardMural>
-                    <CardMural>
-                        <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    </CardMural>
-                    <CardMural>
-                        <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    </CardMural>
-                    <CardMural>
-                        <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    </CardMural>
-                    <CardMural>
-                        <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    </CardMural>
-                    <CardMural>
-                        <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    </CardMural>
-                    <CardMural>
-                        <img src="https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2" alt="Culto de Celebração" />
-                    </CardMural>
-                </Mural>
-            </div>
-
+                ))}
+            </Mural>
+            {showModal && (
+                <ModalContainer show={showModal} onClick={closeModal}>
+                    <ModalContent>
+                        <CloseButton onClick={closeModal}>&times;</CloseButton>
+                        <ModalImage src={selectedEvent} alt="Imagem ampliada" />
+                    </ModalContent>
+                </ModalContainer>
+            )}
         </Container>
-    )
+    );
 }

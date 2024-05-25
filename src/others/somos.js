@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Navbar from "../home/components/navbar";
-import Contato from "../home/contato";
+import Footer from "../home/contato";
 import { Container, RomperVideo, SectionText, TitleStyle , Mural, CardMural, ModalContainer, ModalImage, ModalContent, CloseButton } from "../style/style";
+import img1 from "../assets/historia1.jpg";
+import img2 from "../assets/historia2.jpg";
+import img3 from "../assets/historia3.jpg";
+import img4 from "../assets/historia4.jpg";
+import img5 from "../assets/historia5.jpg";
+import img6 from "../assets/historia6.jpg";
+import img7 from "../assets/historia7.jpg";
 
 
 export default function Somos() {
@@ -10,13 +17,13 @@ export default function Somos() {
     const [selectedImage, setSelectedImage] = useState(null);
 
     const images = [
-        "https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2",
-        "https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2",
-        "https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2",
-        "https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2",
-        "https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2",
-        "https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2",
-        "https://scontent-gig4-2.xx.fbcdn.net/v/t1.6435-9/61894341_1295269800625891_1763375802071646208_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=N0QZAYfnbqYAX-GOlGF&_nc_ht=scontent-gig4-2.xx&oh=00_AfC3TiE49kSkqVPcTJM1yjbW_Xux9e-v_-7PtnvMsWxQ3A&oe=662A63E2",
+        img1,
+        img2,
+        img3,
+        img4,
+        img5,
+        img6,
+        img7
     ];
 
     const openModal = (image) => {
@@ -40,7 +47,7 @@ export default function Somos() {
                 <iframe
                     width="560"
                     height="315"
-                    src="https://www.youtube.com/embed/0M6f5J4H2Zc"
+                    src="https://www.youtube.com/embed/EvJSiAfwpdU"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -55,7 +62,7 @@ export default function Somos() {
                     busca cumprir o Ide de Jesus, levando o evangelho a toda criatura.
                 </p>
                 <p>
-                    A igreja é liderada pelo Pr. Silas Velasco e sua esposa, a Pra. Lívia
+                    A igreja é liderada pelo Pr. Silas Velasco e sua esposa, a Pra. Josy
                     Velasco. A igreja tem como visão ser uma igreja relevante, que
                     impacta a sociedade e que transforma vidas.
                 </p>
@@ -67,7 +74,7 @@ export default function Somos() {
                     A igreja tem como lema "Nossa paixão é por vidas", e tem como
                     objetivo alcançar vidas para Jesus.
                 </p>
-                <p>A igreja se reúne aos domingos às 19h e às quartas-feiras às 20h.</p>
+                <p>A igreja se reúne aos domingos às 09 e 19h e às quartas-feiras às 20h.</p>
             </SectionText>
             <div>
                 <TitleStyle>

@@ -1,7 +1,6 @@
-// criar estilos responsivos em styled-components
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-// criar container sendo responsivo com todas as telas
 export const Container = styled.div`
     width: 100%;
     margin: 0 auto;
@@ -24,7 +23,9 @@ export const AboutStyle = styled.section`
         width: 400px;
         height: 300px;
         object-fit: cover;
-        margin: 10px 0;
+        margin: 10px 100px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     a {
@@ -40,7 +41,14 @@ export const AboutStyle = styled.section`
 
     @media (max-width: 768px) {
         flex-direction: column;
+
+        img {
+            width: 100%;
+            height: 300px;
+            margin: 20px 0;
+        
     }
+
 
 
 `;
@@ -74,6 +82,9 @@ export const TitleStyle = styled.div`
     }
 
     @media (max-width: 768px) {
+        
+        margin: 10px 0;
+
         h1 {
             text-align: center;
             font-size: 30px;
@@ -100,6 +111,7 @@ export const CardStyle = styled.div`
     &:hover {
         background-color: #ff9100;
         color: #fff;
+        cursor: pointer;
     }
 
     h2 {
@@ -152,10 +164,13 @@ export const FooterStyle = styled.div`
         margin: 0 10px;
         font-size: 20px;
         transition: 0.3s;
+        text-decoration: none;
+
     }
 
     a:hover {
         color: #c77100;
+
     }
 
     h3{
@@ -191,6 +206,10 @@ export const Mural = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `;
 
 export const CardMural = styled.div`
@@ -220,8 +239,8 @@ export const CardMural = styled.div`
 
   @media (max-width: 768px) {
     img {
-      width: 100px;
-      height: 75px;
+      width: 100%;
+      height: auto;
     }
 
   }
@@ -265,9 +284,9 @@ export const CloseButton = styled.span`
   }
 `;
 
-export const CollumnStyle = styled.div`
+export const AtividadeStyle = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 30px 0;
@@ -288,6 +307,7 @@ export const BlockStyle = styled.div`
 
     @media (max-width: 768px) {
         flex-direction: column;
+        
     }
 
     img {
@@ -393,9 +413,11 @@ export const FormContato = styled.form`
 export const SectionCarrousel = styled.section`
 
     img {
-        width: 400px;
-        height: 700px;
+        width: 600px;
+        height: 400px;
         object-fit: cover;
+        border-radius: 10px; 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     }
 
     @media (max-width: 768px) {
@@ -403,5 +425,42 @@ export const SectionCarrousel = styled.section`
             width: 100%;
             height: 300px;
         }
+    }
+`;
+
+export const CustomLink = styled(Link)`
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:visited {
+        color: inherit;
+    }
+`;
+
+export const LogoBanco = styled.img`
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+        width: 50px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+`;
+
+export const QRCode = styled.img`
+    width: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    @media (max-width: 768px) {
+        width: 100px;
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
 `;
